@@ -32,19 +32,19 @@ public class Miscellaneous {
     public static void reverseArray() {
         int arr[] = new int[10];
         Scanner scan = new Scanner(System.in);
-        for (int i = 0; i < 10; i++) {
-            System.out.println("Enter the array elements[" + i + "]:");
-            arr[i] = scan.nextInt();
+        for (int iterator = 0; iterator < 10; iterator++) {
+            System.out.println("Enter the array elements[" + iterator + "]:");
+            arr[iterator] = scan.nextInt();
         }
 
-        for (int i = 0; i < arr.length / 2; i++) {
-            int temp = arr[i];
-            arr[i] = arr[arr.length - 1 - i];
-            arr[arr.length - 1 - i] = temp;
+        for (int iterator = 0; iterator < arr.length / 2; iterator++) {
+            int temp = arr[iterator];
+            arr[iterator] = arr[arr.length - 1 - iterator];
+            arr[arr.length - 1 - iterator] = temp;
         }
 
-        for (int i = 0; i < 10; i++) {
-            System.out.print(arr[i] + " ");
+        for (int iterator = 0; iterator < 10; iterator++) {
+            System.out.print(arr[iterator] + " ");
         }
     }
     
@@ -56,18 +56,36 @@ public class Miscellaneous {
         Scanner sc = new Scanner(System.in);
         max = sc.nextInt();
 
-        for (int i = 1; i <= max; i += 2) {
-            sum += i;
+        for (int iterator = 1; iterator <= max; iterator += 2) {
+            sum += iterator;
         }
 
         System.out.println("Sum of Odd no. is:" + sum);
     }
     
     public static void triangleOfAsterisksUsingLoops() {
-        int num = 3;
-        
-        for(int i = 1; i <= num; i ++) {
-            System.out.println(String repeated = StringUtils.repeat("*", i));
+	int num = 3;
+	        
+	for(int iterator = 1; iterator <= num; iterator ++) {         
+            String repeated = new String(new char[iterator]).replace("\0", "*");               
+            System.out.println(repeated);
         }
+    }
+    
+    public static void sumOfNaturalsDivisibleByThreeAndFive() {
+        int max=0;
+        int sum = 0;
+
+        System.out.println("Enter the maximum no:");
+        Scanner sc = new Scanner(System.in);
+        max = sc.nextInt();
+
+        for (int iterator = 2; iterator < max; ++iterator) {
+            if (iterator % 3 == 0 || iterator % 5 == 0) {
+                sum += iterator;
+            }
+        }
+        
+        System.out.println("Total is: " + sum);
     }
 }

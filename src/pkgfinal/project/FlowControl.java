@@ -21,13 +21,11 @@ public class FlowControl {
         
         int input = scanner.nextInt();
         
-        
         for (int i = 1; i <= input; i++) {
             if (i % 3 != 0 && i % 4 != 0) {
                 System.out.println(i);
             }
         }
-        
     }
     
     public static void rightOrWrong(){
@@ -37,7 +35,6 @@ public class FlowControl {
         int input = scanner.nextInt();
         
         System.out.println(input == 24);
-        
     }
     
     public static void luckySum(){
@@ -51,7 +48,6 @@ public class FlowControl {
         System.out.println("Lucky sum:"+s);
     }
     private static int findSum(int a,int b,int c){
-        
         int total = 0;
         int[] numbers = new int[] {a, b, c};
         
@@ -94,7 +90,6 @@ public class FlowControl {
         boolean w = scanner.nextBoolean();
         System.out.print("Are you on a vacation?(true or false):");
         boolean v = scanner.nextBoolean();
-        
         
         System.out.println(!w || v ? "You can sleep." : "You cannot sleep.");
     }
