@@ -1,34 +1,30 @@
 /*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+*   Michael MacCallum - COP 2800
+*   This file contains a program to select programs to run from
+*   different Programmr sections.
+*/
+
 
 package pkgfinal.project;
+import java.io.IOException;
 import java.util.Scanner;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
-/**
- *
- * @author Mick
- */
+
 public class FinalProject {
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String[] args) {
-//        Variables.multiplyTwoNumbers();
-        startProjectCycle();
-    }
 
-    private static void startProjectCycle() {
-//        Scanner scanner=new Scanner(System.in);
-//        System.out.println("Enter a number:");
-//        
-//        int input = scanner.nextInt();
-        getMenuSelection();
+    public static void main(String[] args) {
+    
+        try {
+            startProjectCycle();
+        } catch (IOException ex) {
+            Logger.getLogger(FinalProject.class.getName())
+                .log(Level.SEVERE, null, ex);
+        }
     }
     
-    private static int getMenuSelection() {
+    private static void printSections() {
         String[] menuItems = {
             "Variables", "Operators", "Arithmetic", 
             "Flow Control", "Loops", "Methods", 
@@ -36,33 +32,54 @@ public class FinalProject {
             "Inheritance", "Exception Handling", 
             "Polymorphism", "Collections", "Miscellaneous"
         };
-        
-        Scanner scanner = new Scanner(System.in);
-        System.out.println("Please choose a section");
-        
+
         for (int iterator = 0; iterator < menuItems.length; ++iterator) {
             System.out.println(iterator + ". " + menuItems[iterator]);
         }
+    }
+
+    private static void startProjectCycle() throws IOException {
         
+        printSections();
+        System.out.println("Please enter a section number.");
+        
+        Scanner scanner = new Scanner(System.in);        
         int selection = scanner.nextInt();
         
-        if (selection >= 0 && selection < menuItems.length) {
-            return getSubMenuAtIndex(selection);
-        } else {
-            System.out.println("That was invalid input.");
-            return getMenuSelection();
-        }
-    }
-    
-    private static int getSubMenuAtIndex(int index) {
-        System.out.println("You selected: " + index);
+        boolean shouldContinue = true;
         
-        switch (index) {
+        switch (selection) {
             case 0:
-                
-            break;
-        }
-        
-        return 1;
+                shouldContinue = Variables.startSection();
+                break;
+            case 1:
+                shouldContinue = Operators.startSection();
+                break;
+            case 2:
+                shouldContinue = Arithmetic.startSection();
+                break;
+            case 3:
+                shouldContinue = FlowControl.startSection();
+                break;
+            case 4:
+                shouldContinue = Loops.startSection();
+                break;
+            case 5:
+                shouldContinue = Methods.startSection();
+                break;
+            case 6:
+            case 7:
+            case 8:
+            case 9:
+            case 10:
+            case 11:
+            case 12:
+                System.out.println("This section hasn't been implemented yet.");
+                break;
+            default:
+                System.out.println("Please enter a section number.");
+                startProjectCycle();
+                break;
+        }        
     }
 }

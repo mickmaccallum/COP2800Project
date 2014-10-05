@@ -1,17 +1,51 @@
 /*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+*   Michael MacCallum - COP 2800
+*   This file contains programs from Programmr's Loops section and
+*   a program to execute them.
+*/
+
 
 package pkgfinal.project;
 import java.util.Scanner;
-/**
- *
- * @author Mick
- */
+
 public class Loops {
-    public void sumOfFiveIntegers() {
+   
+    public static boolean startSection() {
+        System.out.println("Please enter one of the following section numbers");
+        
+        String[] exercises = { 
+            "Sum of Five Integers", "Factorial Value",
+            "Printing A Box of Number Signs", "Dynamic Adding",
+            "Reverse A Number"
+        };
+        
+        for (int iterator = 0; iterator < exercises.length; ++iterator) {
+            System.out.println(iterator + ". " + exercises[iterator]);
+        }
+                
+        Scanner scanner = new Scanner(System.in);        
+        int selection = scanner.nextInt();
+        
+        switch (selection) {
+            case 0: sumOfFiveIntegers();
+                break;
+            case 1: factorialValue();
+                break;
+            case 2: printingABoxOfNumberSigns();
+                break;
+            case 3: dynamicAdding();
+                break;
+            case 4: reverseANumber();
+                break;
+            default: System.out.println("That was incorrect input.");
+                startSection();
+                break;
+        }
+        
+        return true; // Reserved for later when this uses recursion.
+    }
+    
+    public static void sumOfFiveIntegers() {
         int total = 0;
         
         Scanner scan = new Scanner(System.in);
@@ -23,7 +57,7 @@ public class Loops {
         System.out.println("Total is: " + total);
     }
     
-    public void factorialValue() {
+    public static void factorialValue() {
         Scanner scanner = new Scanner(System.in);
         
         int number = scanner.nextInt();
@@ -36,7 +70,7 @@ public class Loops {
         System.out.println(total);
     }    
     
-    public void printingABoxOfNumberSigns() {
+    public static void printingABoxOfNumberSigns() {
         Scanner scanner = new Scanner(System.in);
         
         System.out.print("Enter height: ");
@@ -57,11 +91,11 @@ public class Loops {
         }
     }
     
-    public void dynamicAdding() {
+    public static void dynamicAdding() {
         Scanner scanner = new Scanner(System.in);
         int sum = 0;
         
-        System.out.println("How much numbers to add?"); // Same funny typo as on programmr.
+        System.out.println("How many numbers should be added?");
         int number = scanner.nextInt();
         
         for (int i = 0; i < number; ++i) {
@@ -71,7 +105,7 @@ public class Loops {
         System.out.println("The total is: " + sum);
     }
     
-    public void reverseANumber() {
+    public static void reverseANumber() {
         Scanner scanner = new Scanner(System.in);
         int rnum = 0;
         

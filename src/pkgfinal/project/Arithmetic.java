@@ -1,7 +1,7 @@
 /*
-* To change this license header, choose License Headers in Project Properties.
-* To change this template file, choose Tools | Templates
-* and open the template in the editor.
+*   Michael MacCallum - COP 2800
+*   This file contains programs from Programmr's Arithmetic section and
+*   a program to execute them.
 */
 
 package pkgfinal.project;
@@ -10,11 +10,43 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 
-/**
-*
-* @author Mick
-*/
 public class Arithmetic {
+    
+    public static boolean startSection() throws IOException {
+        System.out.println("Please enter one of the following section numbers");
+        
+        String[] exercises = { 
+            "Absolute Equals", "Floor & Ceiling of Number",
+            "Square & Quadratic Roots", "Multiples of 3 or 5 Below N",
+            "Sum Limit"
+        };
+        
+        for (int iterator = 0; iterator < exercises.length; ++iterator) {
+            System.out.println(iterator + ". " + exercises[iterator]);
+        }
+                
+        Scanner scanner = new Scanner(System.in);        
+        int selection = scanner.nextInt();
+        
+        switch (selection) {
+            case 0: absoluteEquals();
+                break;
+            case 1: floorAndCeilingOfNumber();
+                break;
+            case 2: squareAndQuadraticRoots();
+                break;
+            case 3: multiplesOfThreeOrFiveBelowN();
+                break;
+            case 4: sumLimit();
+                break;
+            default: System.out.println("That was incorrect input.");
+                startSection();
+                break;
+        }
+        
+        return true; // Reserved for later when this uses recursion.
+    }    
+    
     public static void absoluteEquals(){
         Scanner scanner=new Scanner(System.in);
         boolean equal = false;

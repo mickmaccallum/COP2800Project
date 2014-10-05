@@ -1,25 +1,57 @@
 /*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+*   Michael MacCallum - COP 2800
+*   This file contains programs from Programmr's Methods section and
+*   a program to execute them.
+*/
 
 package pkgfinal.project;
 import java.util.Scanner;
 
-/**
- *
- * @author Mick
- */
 public class Methods {
+    
+        public static boolean startSection() {
+        System.out.println("Please enter one of the following section numbers");
+        
+        String[] exercises = { 
+            "Square Root of Number", "Area of Circle",
+            "Multiple or Not", "Convert To Lowercase",
+            "Arithmetic Operations"
+        };
+        
+        for (int iterator = 0; iterator < exercises.length; ++iterator) {
+            System.out.println(iterator + ". " + exercises[iterator]);
+        }
+                
+        Scanner scanner = new Scanner(System.in);        
+        int selection = scanner.nextInt();
+        
+        switch (selection) {
+            case 0: squareRootOfNumber();
+                break;
+            case 1: areaOfCircle();
+                break;
+            case 2: multipleOrNot();
+                break;
+            case 3: convertUpperToLowerCase();
+                break;
+            case 4: arithmeticOperations();
+                break;
+            default: System.out.println("That was incorrect input.");
+                startSection();
+                break;
+        }
+        
+        return true; // Reserved for later when this uses recursion.
+    }
+    
     private static double number, answer;
     
-    public static void calculateSquare(double number) {
+    private static void calculateSquare(double number) {
         double sqrt = Math.sqrt(number);
         System.out.println("The square root is: " + (int)sqrt);
     }
     
-    public void squareRootOfNumber() { // main
+    public static void squareRootOfNumber() { // main
         Methods challenge = new Methods();
         final Scanner sc = new Scanner(System.in);
         System.out.print("Enter a number: ");
@@ -29,26 +61,26 @@ public class Methods {
     
     static final double PI = 3.14;
     
-    void getArea() {
+    private void getArea() {
         Scanner scanner = new Scanner(System.in);
         System.out.print("Enter the radius: ");
         
         double radius = scanner.nextDouble();
         double area = PI * Math.pow(radius, 2.0);
         
-        System.out.print("Area of circle is: " + area);
+        System.out.println("Area of circle is: " + area);
     }
     
-    public void areaOfCircle() { // main
+    public static void areaOfCircle() {
         Methods c1 = new Methods();
         c1.getArea();
     }
     
-    public static boolean multiples(int x, int y) {
+    private static boolean multiples(int x, int y) {
         return y % x == 0;
     }
     
-    public void multipleOrNot() { // main
+    public static void multipleOrNot() {
         Scanner scanner = new Scanner(System.in);
         System.out.println("Enter the first number: ");
         int x = scanner.nextInt();
@@ -58,11 +90,11 @@ public class Methods {
         System.out.println(multiples(x, y));
     }
     
-    public static String lowerCase(String x) {
+    private static String lowerCase(String x) {
         return x.toLowerCase();
     }
     
-    public static void convertUpperToLowerCase() { // main
+    public static void convertUpperToLowerCase() {
         Scanner scanner = new Scanner(System.in);
         System.out.println("Enter a letter from the alphabet:");
         
@@ -86,7 +118,7 @@ public class Methods {
         return x * y;
     }
     
-    public static void arithmeticOperations() { // main
+    public static void arithmeticOperations() {
         int num1 = 0;
         int num2 = 0;
         

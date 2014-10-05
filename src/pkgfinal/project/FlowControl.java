@@ -1,21 +1,50 @@
 /*
-* To change this license header, choose License Headers in Project Properties.
-* To change this template file, choose Tools | Templates
-* and open the template in the editor.
+*   Michael MacCallum - COP 2800
+*   This file contains programs from Programmr's Flow Control section and
+*   a program to execute them.
 */
 
 package pkgfinal.project;
 import java.util.Scanner;
 
-/**
-*
-* @author Mick
-*/
-
-// Change at least one of these to use a switch statement instead of ifs
-
 public class FlowControl {
-    public static void noMultiplesOfThreeOrFour(){
+    
+        public static boolean startSection() {
+        System.out.println("Please enter one of the following section numbers");
+        
+        String[] exercises = { 
+            "No Multiples of 3 or 4", "Right or Wrong",
+            "Lucky Sum", "Devry Admission Program",
+            "Sleep"
+        };
+        
+        for (int iterator = 0; iterator < exercises.length; ++iterator) {
+            System.out.println(iterator + ". " + exercises[iterator]);
+        }
+                
+        Scanner scanner = new Scanner(System.in);        
+        int selection = scanner.nextInt();
+        
+        switch (selection) {
+            case 0: noMultiplesOfThreeOrFour();
+                break;
+            case 1: rightOrWrong();
+                break;
+            case 2: luckySum();
+                break;
+            case 3: devryAdmissionProgram();
+                break;
+            case 4: sleep();
+                break;
+            default: System.out.println("That was incorrect input.");
+                startSection();
+                break;
+        }
+        
+        return true; // Reserved for later when this uses recursion.
+    }    
+    
+    public static void noMultiplesOfThreeOrFour() {
         Scanner scanner=new Scanner(System.in);
         System.out.println("Enter a number:");
         
@@ -28,7 +57,7 @@ public class FlowControl {
         }
     }
     
-    public static void rightOrWrong(){
+    public static void rightOrWrong() {
         Scanner scanner=new Scanner(System.in);
         //System.out.println("What is 12+12?");
         
@@ -37,7 +66,7 @@ public class FlowControl {
         System.out.println(input == 24);
     }
     
-    public static void luckySum(){
+    public static void luckySum() {
         Scanner scanner=new Scanner(System.in);
         int a,b,c,s;
         System.out.println("Enter 3 values:");
@@ -47,7 +76,8 @@ public class FlowControl {
         s=findSum(a,b,c);
         System.out.println("Lucky sum:"+s);
     }
-    private static int findSum(int a,int b,int c){
+    
+    private static int findSum(int a,int b,int c) {
         int total = 0;
         int[] numbers = new int[] {a, b, c};
         
@@ -61,7 +91,7 @@ public class FlowControl {
         return total;
     }
     
-    public static void devryAdmissionProgram(){
+    public static void devryAdmissionProgram() {
         Scanner scanner=new Scanner(System.in);
         double gpa;
         int sat_score;
@@ -84,7 +114,7 @@ public class FlowControl {
         System.out.println("You were accepted");
     }
     
-    public static void sleep(){
+    public static void sleep() {
         Scanner scanner = new Scanner(System.in);
         System.out.print("Is it a weekday today?(true or false):");
         boolean w = scanner.nextBoolean();

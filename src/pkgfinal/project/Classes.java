@@ -1,15 +1,11 @@
 /*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+*   Michael MacCallum - COP 2800
+*   This file contains programs from Programmr's Classes section and
+*   a program to execute them.
+*/
 
 package pkgfinal.project;
 
-/**
- *
- * @author Mick
- */
 public class Classes {
     
 }
