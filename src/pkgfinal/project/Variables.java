@@ -12,6 +12,7 @@ import java.util.Scanner;
 * @author Mick
 */
 public class Variables {
+        
     public static void multiplyTwoNumbers(){
         Scanner scanner=new Scanner(System.in);
         int product=0;
