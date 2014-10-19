@@ -58,15 +58,13 @@ public class Methods {
         number = sc.nextDouble();
         Methods.calculateSquare(number);
     }
-    
-    static final double PI = 3.14;
-    
+        
     private void getArea() {
         Scanner scanner = new Scanner(System.in);
         System.out.print("Enter the radius: ");
         
         double radius = scanner.nextDouble();
-        double area = PI * Math.pow(radius, 2.0);
+        double area = Math.PI * Math.pow(radius, 2.0);
         
         System.out.println("Area of circle is: " + area);
     }
@@ -82,6 +80,7 @@ public class Methods {
     
     public static void multipleOrNot() {
         Scanner scanner = new Scanner(System.in);
+        
         System.out.println("Enter the first number: ");
         int x = scanner.nextInt();
         System.out.println("Enter the second number: ");
