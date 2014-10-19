@@ -101,7 +101,7 @@ public class Arithmetic {
     
     public static void sumLimit(){
         Scanner scanner=new Scanner(System.in);
-        int sum=0;
+        int sum = 0;
         
         System.out.println("Enter the 1st number:");
         int num1=scanner.nextInt();
