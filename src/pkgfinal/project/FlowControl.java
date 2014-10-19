@@ -59,7 +59,6 @@ public class FlowControl {
     
     public static void rightOrWrong() {
         Scanner scanner=new Scanner(System.in);
-        //System.out.println("What is 12+12?");
         
         int input = scanner.nextInt();
         
@@ -68,13 +67,13 @@ public class FlowControl {
     
     public static void luckySum() {
         Scanner scanner=new Scanner(System.in);
-        int a,b,c,s;
+        int a, b, c, s;
         System.out.println("Enter 3 values:");
-        a=scanner.nextInt();
-        b=scanner.nextInt();
-        c=scanner.nextInt();
-        s=findSum(a,b,c);
-        System.out.println("Lucky sum:"+s);
+        a = scanner.nextInt();
+        b = scanner.nextInt();
+        c = scanner.nextInt();
+        s = findSum(a, b, c);
+        System.out.println("Lucky sum:" + s);
     }
     
     private static int findSum(int a,int b,int c) {
@@ -92,14 +91,14 @@ public class FlowControl {
     }
     
     public static void devryAdmissionProgram() {
-        Scanner scanner=new Scanner(System.in);
+        Scanner scanner = new Scanner(System.in);
         double gpa;
         int sat_score;
         System.out.println("Devry University Admission Program");
         System.out.print("Enter your GPA out of 5:");
-        gpa=scanner.nextDouble();
+        gpa = scanner.nextDouble();
         System.out.print("Enter your SAT Score:");
-        sat_score=scanner.nextInt();
+        sat_score = scanner.nextInt();
         
         if (gpa < 1.8) {
             System.out.println("Your GPA is too low");
