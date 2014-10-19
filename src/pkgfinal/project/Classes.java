@@ -5,7 +5,141 @@
 */
 
 package pkgfinal.project;
+import java.util.Scanner;
 
 public class Classes {
     
+    public class PrintWithToString { 
+        String name;
+        String age;
+    
+        public PrintWithToString(String n, String a) {
+            name = n;
+            age = a;
+        }
+  
+	public  void main(String[] args) {  
+            Scanner scanner = new Scanner(System.in);  
+  
+            System.out.print("Enter the name:");  
+            String nameString = scanner.next();  
+            System.out.print("Enter the age:");  
+            String ageString = scanner.next();  
+              
+            PrintWithToString test = new PrintWithToString(nameString, ageString);  
+            System.out.println(test);  
+                 
+	}  
+  
+        @Override
+	public String toString() {  
+            return ("Name=>" + name + " and " + "Age=>" + age);  
+	}  
+    } 
+    
+    class AuthorClass {     
+      
+        public void main(String args[]){     
+            Scanner scanner=new Scanner(System.in);      
+            Author aut;    
+  
+            System.out.println("Enter name:");
+            String somename = scanner.nextLine();   
+  
+            System.out.println("Enter email:");   
+            String semail = scanner.nextLine();
+ 
+            System.out.println("Enter book name:");  
+            String sbook = scanner.nextLine();   
+  
+            aut = new Author(somename, semail, sbook);
+  
+            System.out.println(aut.name+"\n"+aut.email+"\n"+aut.book);   
+        }     
+    }    
+     
+    class Author { 
+        String name;
+        String email;
+        String book;
+    
+        public Author(String nameIn, String emailIn, String bookIn) {
+            name = nameIn;
+            email = emailIn;
+            book = bookIn;
+        }
+    }
+    
+    class CircleClass {  
+  
+        public void main(String args[]){  
+            Scanner scanner = new Scanner(System.in);  
+            int sum = 0;  
+            
+            System.out.println("Enter radius:");
+            double rad = scanner.nextDouble();
+ 
+            System.out.println("Enter color:");   
+            String col = scanner.next(); 
+ 
+            MyCircle mc = new MyCircle(rad, col);
+  
+            System.out.println(mc.getArea()); 
+            System.out.println(mc.color); 
+        }  
+    } 
+  
+    class MyCircle { 
+        double radius;
+        String color;
+    
+        public MyCircle(double rad, String col) {
+            radius = rad;
+            color = col;
+        }
+
+        public double getArea() {
+            return Math.pow(radius,2.0) * Math.PI;
+        }
+    }   
+    
+    class QuadrantClass {
+
+        public void main(String args[]) {
+            Scanner scanner = new Scanner(System.in);
+
+            System.out.println("Enter x coordinate:");
+            int num1 = scanner.nextInt();
+            
+            System.out.println("Enter y coordinate:");
+            int num2 = scanner.nextInt();
+ 
+            Point point = new Point(num1, num2);
+            System.out.println("Quadrant " + point.quadrant());
+        }
+    }
+    
+    class Point {
+        int x;
+        int y;
+    
+        public Point(int xVal, int yVal) {
+            x = xVal;
+            y = yVal;
+        }
+    
+        public int quadrant() {
+            if (x > 0 && y > 0) {
+                return 1;
+            } else if (x < 0 && y > 0) {
+                return 2;
+            } else if (x < 0 && y < 0) {
+                return 3;
+            } else if (x > 0 && y < 0) {
+                return 4;
+            } else {
+                return 0;
+            }
+        }
+    }
 }
