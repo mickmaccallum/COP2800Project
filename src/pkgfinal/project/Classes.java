@@ -161,17 +161,11 @@ public class Classes {
         }
     }
     
-    class Employee {
+    final class Employee {
         private String firstName;
         private String lastName;
-        private double salary;
+        private double salary = 0.0;
     
-        public Employee(String f, String l, double s) {
-            firstName = f;
-            lastName = l;
-            salary = s;
-        }
-
         public String getFirst() {
             return firstName;
         }
@@ -198,6 +192,12 @@ public class Classes {
             } else {
                 salary = 0.0;
             }
+        }
+        
+        public Employee(String f, String l, double s) {
+            this.setFirst(f);
+            this.setLast(l);
+            this.setSalary(s);
         }
     }
 }
