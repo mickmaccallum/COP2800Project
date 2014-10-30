@@ -142,4 +142,62 @@ public class Classes {
             }
         }
     }
+    
+    class EmployeeInfo {
+
+        public void main() {
+            Scanner scanner=new Scanner(System.in);
+            System.out.println("Enter first name:");
+            String first = scanner.nextLine();
+            System.out.println("Enter last name:");
+            String last = scanner.nextLine();
+            System.out.println("Enter monthly salary:");
+            double salary = scanner.nextDouble();
+            Employee e1 = new Employee(first,last,salary);
+ 
+            System.out.println("First name:"+e1.getFirst());
+            System.out.println("Last name:"+e1.getLast());
+            System.out.println("Salary:"+e1.getSalary());
+        }
+    }
+    
+    class Employee {
+        private String firstName;
+        private String lastName;
+        private double salary;
+    
+        public Employee(String f, String l, double s) {
+            firstName = f;
+            lastName = l;
+            salary = s;
+        }
+
+        public String getFirst() {
+            return firstName;
+        }
+
+        public String getLast() {
+            return lastName;
+        }
+
+        public double getSalary() {
+            return salary;
+        }
+
+        public void setFirst(String f) {
+            firstName = f;
+        }
+
+        public void setLast(String l) {
+            lastName = l;
+        }
+
+        public void setSalary(double s) {
+            if (s < 0.0) {
+                salary = 0.0;
+            } else {
+                salary = 0.0;
+            }
+        }
+    }
 }
