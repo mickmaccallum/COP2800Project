@@ -66,4 +66,57 @@ public class Inheritance {
             obj.show();
         }
     }
+       
+    class AreaWithInheritance {   
+   
+	public void main() {   
+            Scanner scanner = new Scanner(System.in);   
+		  
+            System.out.print("Enter the radius:");   
+            double radius = scanner.nextDouble();   
+            new AreaWithInheritance().method(radius);   
+	}   
+   
+	public void method(double radius) {   
+            Circle myCircle = new Circle();   
+            myCircle.setradius(radius);   
+            System.out.print(myCircle.getDisplayText());   
+	}   
+   
+	public abstract class CircleShape {   
+            public double radius;   
+ 
+            public CircleShape() {   
+		
+            }   
+   
+            public CircleShape(double radius) {   
+		this.radius = radius;   
+            }   
+   
+            public void setradius(double radius) {   
+		this.radius = radius;   
+            }   
+   
+            @Override
+            public String toString() {   
+		return "Radius " + radius;   
+            }   
+   
+            abstract String getDisplayText();   
+	}   
+   
+	public class Circle extends CircleShape {   
+            private double area;   
+   
+            public double area() {   
+                return radius * radius * 3.14;   
+            }   
+   
+            @Override
+            public String getDisplayText() { 
+                return "Radius " + radius + " and Area is " + this.area();
+            }   
+	}   
+    }   
 }
