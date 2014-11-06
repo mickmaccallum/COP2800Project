@@ -37,7 +37,6 @@ public class ExceptionHandling {
 	System.out.println("Enter a number:"); 
 	int input = scanner.nextInt(); 
 
-
 	try {
             if (input % 2 == 0 && input % 5 == 0) {
 		System.out.println("correct");
@@ -55,15 +54,49 @@ public class ExceptionHandling {
 }
 
 class Point {
-    int x;
-    int y;
     
-    public Point(int theX, int theY) {
-        x = theX;
-        y = theY;
+    private final int x;
+    private final int y;
+    
+    public Point(int num1, int num2) {
+        x = num1;
+        y = num2;
     }
-    
-    public int Slope(int x2, int y2) {
-        return (y2 - y) / (x2 - x);
+            
+    public int slope(int num3, int num4) throws ArithmeticException {
+        int numerator = num4 - y;
+        int denominator = num3 - x;
+        int slope = (numerator)/(denominator);
+            
+        return Math.abs(slope);
     }
 }
+
+class SlopePoint {
+
+    public static void main(String args[]) {
+        
+        Scanner scanner=new Scanner(System.in);
+        boolean continueLoop = true;
+
+        while (continueLoop) {
+            System.out.println("Enter x coordinate of current point:");
+            int x1 = scanner.nextInt();
+            System.out.println("Enter y coordinate of current point:");
+            int y1 = scanner.nextInt();
+            System.out.println("Enter x coordinate of target point:");
+            int x2 = scanner.nextInt();
+            System.out.println("Enter y coordinate of target point:");    
+            int y2 = scanner.nextInt();
+
+            Point p = new Point(x1, y1);
+    
+            try {
+                System.out.println(p.slope(x2, y2));
+            } catch (ArithmeticException e) {
+                System.out.println("Zero is an invalid denominator. Please try again.");
+            }
+        }
+    }
+}
+
