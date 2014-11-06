@@ -118,5 +118,48 @@ public class Inheritance {
                 return "Radius " + radius + " and Area is " + this.area();
             }   
 	}   
-    }   
+    }
+    
+    class A {
+        int i, j;
+    
+        A(int a, int b) {
+            i = a;
+            j = b;
+        }
+   
+        void show() {
+            System.out.println("i and j:" + i + " " + j);
+        }
+    }
+
+    class B extends A {
+        int k;
+    
+        B(int a, int b, int c) {
+            super(a, b);
+            k = c;
+        }
+    
+        @Override
+        void show() {
+            System.out.println("k:" + k);   
+        }
+    }
+
+    class UsingSuper {
+        public void main() {
+            Scanner scanner=new Scanner(System.in);
+            int sum=0;
+
+            System.out.println("Enter the 1st number:");
+            int num1=scanner.nextInt();
+            System.out.println("Enter the 2nd number:");
+            int num2=scanner.nextInt();
+            System.out.println("Enter the 3rd number:");
+            int num3=scanner.nextInt();
+            B obj = new B(num1,num2,num3);
+            obj.show();
+        }
+    }
 }
