@@ -162,4 +162,100 @@ public class Inheritance {
             obj.show();
         }
     }
+    
+    class PurchasedItemSection {
+        public void main(){
+            Scanner scanner = new Scanner(System.in);
+
+            System.out.println("Enter name:");
+            String name1 = scanner.nextLine();
+            System.out.println("Enter unit price:");
+            double up = scanner.nextDouble();
+            System.out.println("Enter weight:");
+            double w = scanner.nextDouble();
+            WeighedItem item1 = new WeighedItem(name1, up, w);
+
+            scanner.nextLine();
+            System.out.println("Enter name:");
+            String name2 = scanner.nextLine();
+            System.out.println("Enter unit price:");
+            double up1 = scanner.nextDouble();
+            System.out.println("Enter quantity:");
+            int q = scanner.nextInt();
+            CountedItem item2 = new CountedItem(name2,up1,q);
+            System.out.println(item1);
+            System.out.println(item2);
+        }
+    }
+
+    class PurchaseItem {
+        
+        private String name;
+        private double unitPrice;
+        public PurchaseItem(String n, double up) {
+            name = n;
+            setPrice(up);
+        }
+
+        public void setName(String n) {
+            name = n;
+        }
+
+        public String getName() {
+            return name;
+        }
+
+        public void setPrice(double up) {
+            unitPrice = (up > 0) ? up : 0;
+        }
+
+        public double getPrice() {
+            return unitPrice;
+        }
+
+        @Override
+        public String toString() {
+            return getName() + "@ " + getPrice();
+        }
+    }
+
+    class WeighedItem extends PurchaseItem {
+        private double weight;
+
+        public WeighedItem(String n, double up, double w) {
+            super(n, up);
+            weight = w;
+        }
+
+        @Override
+        public double getPrice() {
+            return super.getPrice() * weight;
+        }
+
+        @Override
+        public String toString()
+        {
+            return getName() + "@ "+ super.getPrice() + " " + weight + " Kg" + getPrice() + " $";
+        }
+    }
+
+    class CountedItem extends PurchaseItem {
+        private int quantity;
+
+        public CountedItem(String n, double up, int q) {
+            super(n, up);
+            quantity = q;
+        }
+
+        @Override
+        public double getPrice() {
+            return super.getPrice() * quantity;
+        }
+
+        @Override
+        public String toString()
+        {
+            return getName() + "@ " + super.getPrice() + " " + quantity + " units " + getPrice() + " $";
+        }
+    }
 }
