@@ -8,6 +8,42 @@ package pkgfinal.project;
 import java.util.Scanner;
 
 public class Arrays {
+
+    public static boolean startSection() {
+        System.out.println("Please enter one of the following section numbers");
+        
+        String[] exercises = { 
+            "Add Elements of an Array", "Even Numbers Only",
+            "Product of Greatest and Smallest", "Swap Ends",
+            "Locate the Largest Number in the Array"
+        };
+        
+        for (int iterator = 0; iterator < exercises.length; ++iterator) {
+            System.out.println(iterator + ". " + exercises[iterator]);
+        }
+                
+        Scanner scanner = new Scanner(System.in);        
+        int selection = scanner.nextInt();
+        
+        switch (selection) {
+            case 0: addElementsOfAnArray();
+                break;
+            case 1: evenNumbersOnly();
+                break;
+            case 2: productOfGreatestAndSmallest();
+                break;
+            case 3: swapEnds();
+                break;
+            case 4: locateTheLargestNumberInTheArray();
+                break;
+            default: System.out.println("That was incorrect input.");
+                startSection();
+                break;
+        }
+        
+        return true; // Reserved for later when this uses recursion.
+    }    
+    
     public static void addElementsOfAnArray() {
         Scanner scanner = new Scanner(System.in);
         int sum = 0;

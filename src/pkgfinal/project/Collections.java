@@ -5,7 +5,42 @@ import java.util.*;
 
 public class Collections {
 
-    public static void largestValueInArrayList() {
+    public static boolean startSection() {
+        System.out.println("Please enter one of the following section numbers");
+        
+        String[] exercises = { 
+            "Largest Value in List", "Largest Value and Index in List",
+            "Length of Longest Word in List", "Stack With Array List",
+            "Copy Array List"
+        };
+        
+        for (int iterator = 0; iterator < exercises.length; ++iterator) {
+            System.out.println(iterator + ". " + exercises[iterator]);
+        }
+                
+        Scanner scanner = new Scanner(System.in);        
+        int selection = scanner.nextInt();
+        
+        switch (selection) {
+            case 0: largestValueInArrayList();
+                break;
+            case 1: largestValueAndIndexInArrayList();
+                break;
+            case 2: lengthOfLongestStringInArrayList();
+                break;
+            case 3: stack();
+                break;
+            case 4: CopyArrayList();
+                break;
+            default: System.out.println("That was incorrect input.");
+                startSection();
+                break;
+        }
+        
+        return true; // Reserved for later when this uses recursion.
+    }    
+    
+    private static void largestValueInArrayList() {
         
         Scanner scanner = new Scanner(System.in);
         ArrayList<Integer> list = new ArrayList<>();
@@ -31,7 +66,7 @@ public class Collections {
         System.out.println("The largest value: " + max);
     }
     
-    public static void largestValueAndIndexInArrayList() {
+    private static void largestValueAndIndexInArrayList() {
         
         Scanner scanner = new Scanner(System.in);
     	ArrayList<Integer> al = new ArrayList<>();
@@ -59,7 +94,7 @@ public class Collections {
         System.out.println("The largest value is " + max + "; which is in slot " + maxindex); 
     }
     
-    public static void lengthOfLongestStringInArrayList() {
+    private static void lengthOfLongestStringInArrayList() {
         Scanner scanner = new Scanner(System.in);
     	ArrayList<String> al = new ArrayList<>();
     	
@@ -83,8 +118,8 @@ public class Collections {
         System.out.println("TheLength of longest string in arraylist:" + max);
     }
     
-    public static void stack() {
-        Scanner scanner=new Scanner(System.in);
+    private static void stack() {
+        Scanner scanner = new Scanner(System.in);
         int sum = 0;
 
         System.out.println("Enter the 1st number:");
@@ -113,7 +148,7 @@ public class Collections {
         System.out.println(st);
     }
     
-    public static void main(String args[]) {
+    private static void CopyArrayList() {
     	Scanner scanner = new Scanner(System.in);
         System.out.print("Enter ten elements: ");
 

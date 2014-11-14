@@ -68,13 +68,28 @@ public class FinalProject {
                 shouldContinue = Methods.startSection();
                 break;
             case 6:
+                shouldContinue = Arrays.startSection();
+                break;
             case 7:
+                shouldContinue = Strings.startSection();
+                break;
             case 8:
+                shouldContinue = Classes.startSection();
+                break;
             case 9:
+                shouldContinue = Inheritance.startSection();
+                break;
             case 10:
+                shouldContinue = ExceptionHandling.startSection();
+                break;
             case 11:
+                shouldContinue = Polymorphism.startSection();
+                break;
             case 12:
-                System.out.println("This section hasn't been implemented yet.");
+                shouldContinue = Collections.startSection();
+                break;
+            case 13:
+                shouldContinue = Miscellaneous.startSection();
                 break;
             default:
                 System.out.println("Please enter a section number.");

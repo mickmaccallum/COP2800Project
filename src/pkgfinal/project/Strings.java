@@ -10,7 +10,43 @@ import java.util.Scanner;
 import java.io.*;   
 
 public class Strings {
-    public static void changingUppercaseToLowercase() {
+    
+    public static boolean startSection() throws IOException {
+        System.out.println("Please enter one of the following section numbers");
+        
+        String[] exercises = { 
+            "Upper to Lower Case", "Find the Length of a String",
+            "Capitalization", "Palindrone Check",
+            "Longest Word"
+        };
+        
+        for (int iterator = 0; iterator < exercises.length; ++iterator) {
+            System.out.println(iterator + ". " + exercises[iterator]);
+        }
+                
+        Scanner scanner = new Scanner(System.in);        
+        int selection = scanner.nextInt();
+        
+        switch (selection) {
+            case 0: changingUppercaseToLowercase();
+                break;
+            case 1: findTheLengthOfAString();
+                break;
+            case 2: capitalization();
+                break;
+            case 3: palindroneCheck();
+                break;
+            case 4: longestWord();
+                break;
+            default: System.out.println("That was incorrect input.");
+                startSection();
+                break;
+        }
+        
+        return true; // Reserved for later when this uses recursion.
+    }    
+    
+    private static void changingUppercaseToLowercase() {
         Scanner scanner = new Scanner(System.in);
 	System.out.println("Enter an Uppercase letter:");
                 
@@ -21,7 +57,7 @@ public class Strings {
         System.out.println(lowercaseInput);
     }
     
-    public static void findTheLengthOfAString() {
+    private static void findTheLengthOfAString() {
         Scanner scanner = new Scanner(System.in);
 
         System.out.println("Enter a string:");
@@ -32,7 +68,7 @@ public class Strings {
         System.out.println("Length of the string is:" + length);
     }
     
-    public static void capitalization() {
+    private static void capitalization() {
         Scanner sc = new Scanner(System.in);
 
         System.out.print("Enter a line of text: ");
@@ -44,7 +80,7 @@ public class Strings {
         System.out.println(upper);
     }
     
-    public static void palindroneCheck() {
+    private static void palindroneCheck() {
         Scanner sc = new Scanner(System.in);
 
         System.out.print("Enter a line of text: ");
@@ -57,7 +93,7 @@ public class Strings {
         System.out.println("Entered string " + out + " a palindrome.");
     }   
     
-    public static void longestWord() throws IOException {
+    private static void longestWord() throws IOException {
         System.out.println("Enter a sentence:");
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 

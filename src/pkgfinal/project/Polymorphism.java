@@ -4,7 +4,42 @@ import java.util.Scanner;
 
 public class Polymorphism {
     
-    private class Box {
+    public static boolean startSection() {
+        System.out.println("Please enter one of the following section numbers");
+        
+        String[] exercises = { 
+            "Constructor Overloading", "Method Overloading",
+            "Method Overridding", "Areas of Shapes",
+            "Types of Books"
+        };
+        
+        for (int iterator = 0; iterator < exercises.length; ++iterator) {
+            System.out.println(iterator + ". " + exercises[iterator]);
+        }
+                
+        Scanner scanner = new Scanner(System.in);        
+        int selection = scanner.nextInt();
+        
+        switch (selection) {
+            case 0: ConstructorOverloading.main();
+                break;
+            case 1: MethodOverloading.main();
+                break;
+            case 2: MethodOverridding.main();
+                break;
+            case 3: AreasOfShapes.main();
+                break;
+            case 4: Books.main();
+                break;
+            default: System.out.println("That was incorrect input.");
+                startSection();
+                break;
+        }
+        
+        return true; // Reserved for later when this uses recursion.
+    }
+    
+    private static class Box {
 
 	int width;
 	int height;
@@ -33,9 +68,9 @@ public class Polymorphism {
 	}
     }
 
-    class ConstructorOverloading {
+    private static class ConstructorOverloading {
 
-	public void main() {
+	public static void main() {
             Box mybox1 = new Box(10, 20, 15);
             Box mybox2 = new Box();
             Box mycube = new Box(7);
@@ -53,7 +88,7 @@ public class Polymorphism {
 	}
     }
     
-    class Overload {   
+    private static class Overload {   
         public void test(int val1) {
             System.out.println("a " + val1);
         }
@@ -68,9 +103,9 @@ public class Polymorphism {
         }
     }   
    
-    class MethodOverloading {   
+    private static class MethodOverloading {   
 	
-        public void main() {   
+        public static void main() {   
             Overload overload = new Overload();   
             
             overload.test(10);   
@@ -81,14 +116,14 @@ public class Polymorphism {
 	}   
     }
     
-    private class Animal {
+    private static class Animal {
 
 	public void move() {
             System.out.println("Animals can move");
 	}
     }
 
-    private class Dog extends Animal {
+    private static class Dog extends Animal {
 
         @Override
 	public void move() {
@@ -96,9 +131,9 @@ public class Polymorphism {
 	}
     }
 
-    public class MethodOverridding {
+    private static class MethodOverridding {
 
-	public void main() {
+	public static void main() {
             Animal animal = new Animal();
             animal.move();
         
@@ -107,8 +142,8 @@ public class Polymorphism {
         }
     }
     
-    class AreasOfShapes {
-        public void main() {
+    private static class AreasOfShapes {
+        public static void main() {
             Scanner sc = new Scanner(System.in);
             System.out.print("**Menu**\n1. Area of Rectangle\n2. Area of Square\n3. Area of Circle\n4. Area of Triangle\nEnter your choice :");
 
@@ -160,7 +195,7 @@ public class Polymorphism {
 	}
     }
 
-    private class Area {
+    private static class Area {
         public double area(double a, double b) {
             return a * b;
         }
@@ -174,8 +209,8 @@ public class Polymorphism {
         }
     }
     
-    class Books {
-        public void main() {
+    private static class Books {
+        public static void main() {
             Scanner scanner = new Scanner(System.in);
 
             Book[] book = new Book[2];
@@ -194,7 +229,7 @@ public class Polymorphism {
         }
     }
 
-    abstract class Book {
+    abstract private static class Book {
         String title;
         double price;
 
@@ -213,7 +248,7 @@ public class Polymorphism {
         public abstract void setPrice(double p);
     }
 
-    final class Fiction extends Book {
+    final private static class Fiction extends Book {
 
         public Fiction(String t) {
             super(t);
@@ -231,7 +266,7 @@ public class Polymorphism {
         }
     }
 
-    final class NonFiction extends Book {
+    final private static class NonFiction extends Book {
 
         public NonFiction(String t) {
             super(t);

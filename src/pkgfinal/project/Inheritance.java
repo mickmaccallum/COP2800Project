@@ -8,7 +8,43 @@ package pkgfinal.project;
 import java.util.Scanner;
 
 public class Inheritance {
-    class Counter {  
+    
+    public static boolean startSection() {
+        System.out.println("Please enter one of the following section numbers");
+        
+        String[] exercises = { 
+            "", "",
+            "", "",
+            ""
+        };
+        
+        for (int iterator = 0; iterator < exercises.length; ++iterator) {
+            System.out.println(iterator + ". " + exercises[iterator]);
+        }
+                
+        Scanner scanner = new Scanner(System.in);        
+        int selection = scanner.nextInt();
+        
+        switch (selection) {
+            case 0: CounterClass.main();
+                break;
+            case 1: Fruits.main();
+                break;
+            case 2: AreaWithInheritance.main();
+                break;
+            case 3: UsingSuper.main();
+                break;
+            case 4: PurchasedItemSection.main();
+                break;
+            default: System.out.println("That was incorrect input.");
+                startSection();
+                break;
+        }
+        
+        return true; // Reserved for later when this uses recursion.
+    }
+    
+    private class Counter {  
   
 	int i = 0;  
 	Counter increment() {  
@@ -20,9 +56,9 @@ public class Inheritance {
 	}  
     }  
   
-    public class CounterClass extends Counter {  
+    private static class CounterClass extends Counter {  
   
-	public void main() {
+	public static void main() {
         CounterClass challenge = new CounterClass();
             challenge.i = 2;
             challenge.increment();     
@@ -30,7 +66,7 @@ public class Inheritance {
 	}  
     }
     
-    class Apple{
+    private static class Apple {
         int number_of_items;
        
         public void show() {
@@ -38,7 +74,7 @@ public class Inheritance {
         }
     }
 
-    class Banana extends Apple {
+    private static class Banana extends Apple {
         int number_of_items;
 
         @Override
@@ -48,28 +84,30 @@ public class Inheritance {
         }
 
 	public Banana(int a, int b) {
-		super.number_of_items = a;
-		this.number_of_items = b;
+            super.number_of_items = a;
+            this.number_of_items = b;
 	}
     }
 
-    class EmployeeClass {
-        public void main() {
-            Scanner scanner=new Scanner(System.in);
-            int sum=0;
+    private static class Fruits {
+        public static void main() {
+            Scanner scanner = new Scanner(System.in);
+            int sum = 0;
 
             System.out.println("Enter the number of apples:");
-            int num1=scanner.nextInt();
+            int num1 = scanner.nextInt();
+            
             System.out.println("Enter the number of bananas:");
-            int num2=scanner.nextInt();
-            Banana obj = new Banana(num1,num2);
+            int num2 = scanner.nextInt();
+            
+            Banana obj = new Banana(num1, num2);
             obj.show();
         }
     }
        
-    class AreaWithInheritance {   
+    private static class AreaWithInheritance {   
    
-	public void main() {   
+	public static void main() {   
             Scanner scanner = new Scanner(System.in);   
 		  
             System.out.print("Enter the radius:");   
@@ -110,7 +148,7 @@ public class Inheritance {
             private double area;   
    
             public double area() {   
-                return radius * radius * 3.14;   
+                return Math.pow(radius, 2.0) * Math.PI;   
             }   
    
             @Override
@@ -120,7 +158,7 @@ public class Inheritance {
 	}   
     }
     
-    class A {
+    private static class A {
         int i, j;
     
         A(int a, int b) {
@@ -133,7 +171,7 @@ public class Inheritance {
         }
     }
 
-    class B extends A {
+    private static class B extends A {
         int k;
     
         B(int a, int b, int c) {
@@ -147,48 +185,58 @@ public class Inheritance {
         }
     }
 
-    class UsingSuper {
-        public void main() {
+    private static class UsingSuper {
+        public static void main() {
             Scanner scanner=new Scanner(System.in);
             int sum=0;
 
             System.out.println("Enter the 1st number:");
-            int num1=scanner.nextInt();
+            int num1 = scanner.nextInt();
+            
             System.out.println("Enter the 2nd number:");
-            int num2=scanner.nextInt();
+            int num2 = scanner.nextInt();
+            
             System.out.println("Enter the 3rd number:");
-            int num3=scanner.nextInt();
-            B obj = new B(num1,num2,num3);
+            int num3 = scanner.nextInt();
+            
+            B obj = new B(num1, num2, num3);
             obj.show();
         }
     }
     
-    class PurchasedItemSection {
-        public void main(){
+    private static class PurchasedItemSection {
+        public static void main() {
             Scanner scanner = new Scanner(System.in);
 
             System.out.println("Enter name:");
             String name1 = scanner.nextLine();
+            
             System.out.println("Enter unit price:");
             double up = scanner.nextDouble();
+            
             System.out.println("Enter weight:");
             double w = scanner.nextDouble();
+            
             WeighedItem item1 = new WeighedItem(name1, up, w);
 
             scanner.nextLine();
             System.out.println("Enter name:");
             String name2 = scanner.nextLine();
+            
             System.out.println("Enter unit price:");
             double up1 = scanner.nextDouble();
+            
             System.out.println("Enter quantity:");
             int q = scanner.nextInt();
-            CountedItem item2 = new CountedItem(name2,up1,q);
+            
+            CountedItem item2 = new CountedItem(name2, up1, q);
+            
             System.out.println(item1);
             System.out.println(item2);
         }
     }
 
-    class PurchaseItem {
+    private static class PurchaseItem {
         
         private String name;
         private double unitPrice;
@@ -219,8 +267,8 @@ public class Inheritance {
         }
     }
 
-    class WeighedItem extends PurchaseItem {
-        private double weight;
+    private static class WeighedItem extends PurchaseItem {
+        private final double weight;
 
         public WeighedItem(String n, double up, double w) {
             super(n, up);
@@ -239,8 +287,8 @@ public class Inheritance {
         }
     }
 
-    class CountedItem extends PurchaseItem {
-        private int quantity;
+    private static class CountedItem extends PurchaseItem {
+        private final int quantity;
 
         public CountedItem(String n, double up, int q) {
             super(n, up);

@@ -8,6 +8,42 @@ package pkgfinal.project;
 import java.util.Scanner;
 
 public class Miscellaneous {
+    
+    public static boolean startSection() {
+        System.out.println("Please enter one of the following section numbers");
+        
+        String[] exercises = { 
+            "Quadrant of Angle", "Reverse Array",
+            "Sum of Odd Numbers", "Triangle of Asterisks Using Loops",
+            "Sum of Natural Numbers Divisible by 3 & 5"
+        };
+        
+        for (int iterator = 0; iterator < exercises.length; ++iterator) {
+            System.out.println(iterator + ". " + exercises[iterator]);
+        }
+                
+        Scanner scanner = new Scanner(System.in);        
+        int selection = scanner.nextInt();
+        
+        switch (selection) {
+            case 0: quadrantOfAngle();
+                break;
+            case 1: reverseArray();
+                break;
+            case 2: sumOfOddNumbers();
+                break;
+            case 3: triangleOfAsterisksUsingLoops();
+                break;
+            case 4: sumOfNaturalsDivisibleByThreeAndFive();
+                break;
+            default: System.out.println("That was incorrect input.");
+                startSection();
+                break;
+        }
+        
+        return true; // Reserved for later when this uses recursion.
+    }
+        
     private static int i;
     public static void quadrantOfAngle() {			
         int angle = 0;

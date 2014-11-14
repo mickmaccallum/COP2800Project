@@ -1,6 +1,6 @@
 /*
 *   Michael MacCallum - COP 2800
-*   This file contains programs from Programmr's Arithmetic section and
+*   This file contains programs from Programmr's Exceptions section and
 *   a program to execute them.
 */
 
@@ -9,6 +9,36 @@ import java.util.*;
 
 public class ExceptionHandling {
     
+    public static boolean startSection() {
+        System.out.println("Please enter one of the following section numbers");
+        
+        String[] exercises = { 
+            "ID Number Machine", "Ask For a Certain Number",
+            "Slope Point"
+        };
+        
+        for (int iterator = 0; iterator < exercises.length; ++iterator) {
+            System.out.println(iterator + ". " + exercises[iterator]);
+        }
+                
+        Scanner scanner = new Scanner(System.in);        
+        int selection = scanner.nextInt();
+        
+        switch (selection) {
+            case 0: IDNumberMachine();
+                break;
+            case 1: askForACertainNumber();
+                break;
+            case 2: SlopePoint.main();
+                break;
+            default: System.out.println("That was incorrect input.");
+                startSection();
+                break;
+        }
+        
+        return true; // Reserved for later when this uses recursion.
+    }   
+        
     public static void IDNumberMachine() {
         Scanner scanner = new Scanner(System.in); 
         String input;
@@ -47,10 +77,6 @@ public class ExceptionHandling {
             System.out.println("wrong");
 	}
     }
-    
-    public static void slopePoint() {
-        
-    }
 }
 
 class Point {
@@ -66,7 +92,7 @@ class Point {
     public int slope(int num3, int num4) throws ArithmeticException {
         int numerator = num4 - y;
         int denominator = num3 - x;
-        int slope = (numerator)/(denominator);
+        int slope = (numerator) / (denominator);
             
         return Math.abs(slope);
     }
@@ -74,7 +100,7 @@ class Point {
 
 class SlopePoint {
 
-    public static void main(String args[]) {
+    public static void main() {
         
         Scanner scanner=new Scanner(System.in);
         boolean continueLoop = true;
@@ -97,40 +123,5 @@ class SlopePoint {
                 System.out.println("Zero is an invalid denominator. Please try again.");
             }
         }
-    }
-}
-// Unsubmitted
-class ConvertToCentimeters {
-    private static double height(int feet, int inches) {
-        return (feet * 30.48) + (inches * 2.54);
-    }
-    
-    public static void main(String args[]) {
-        Scanner scanner = new Scanner(System.in);
-        boolean continueLoop = true;
- 
-        Loop: do {
-            try {
-                System.out.println("Enter height in feet:");
-                int feet = scanner.nextInt();
-        
-                System.out.println("and in inches:");
-                int inches = scanner.nextInt();
-        
-                if (feet < 0 || inches < 0) {
-                    throw new Exception();
-                }
-
-                double result = height(feet,inches);
-                System.out.println("Result:" + result + " cm");
-        
-                continueLoop = false;
-            } catch (InputMismatchException e) {
-                System.out.println();
-                continue Loop;   
-            } catch (Exception e) {
-                System.out.println("Please enter positive values only.");
-            }
-        } while (continueLoop);
     }
 }

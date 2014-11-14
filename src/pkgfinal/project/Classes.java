@@ -9,7 +9,42 @@ import java.util.Scanner;
 
 public class Classes {
     
-    public class PrintWithToString { 
+    public static boolean startSection() {
+        System.out.println("Please enter one of the following section numbers");
+        
+        String[] exercises = { 
+            "Print With toString", "Author",
+            "Circle", "Quadrant",
+            "Employee Info"
+        };
+        
+        for (int iterator = 0; iterator < exercises.length; ++iterator) {
+            System.out.println(iterator + ". " + exercises[iterator]);
+        }
+                
+        Scanner scanner = new Scanner(System.in);        
+        int selection = scanner.nextInt();
+        
+        switch (selection) {
+            case 0: PrintWithToString.main();
+                break;
+            case 1: AuthorClass.main();
+                break;
+            case 2: CircleClass.main();
+                break;
+            case 3: QuadrantClass.main();
+                break;
+            case 4: EmployeeInfo.main();
+                break;
+            default: System.out.println("That was incorrect input.");
+                startSection();
+                break;
+        }
+        
+        return true; // Reserved for later when this uses recursion.
+    }
+        
+    private static class PrintWithToString { 
         String name;
         String age;
     
@@ -18,7 +53,7 @@ public class Classes {
             age = a;
         }
   
-	public  void main(String[] args) {  
+	public static void main() {  
             Scanner scanner = new Scanner(System.in);  
   
             System.out.print("Enter the name:");  
@@ -37,10 +72,10 @@ public class Classes {
 	}  
     } 
     
-    class AuthorClass {     
+    private static class AuthorClass {     
       
-        public void main(String args[]){     
-            Scanner scanner=new Scanner(System.in);      
+        public static void main() {     
+            Scanner scanner = new Scanner(System.in);      
             Author aut;    
   
             System.out.println("Enter name:");
@@ -54,11 +89,11 @@ public class Classes {
   
             aut = new Author(somename, semail, sbook);
   
-            System.out.println(aut.name+"\n"+aut.email+"\n"+aut.book);   
+            System.out.println(aut.name + "\n" + aut.email + "\n" + aut.book);   
         }     
     }    
      
-    class Author { 
+    private static class Author { 
         String name;
         String email;
         String book;
@@ -70,9 +105,9 @@ public class Classes {
         }
     }
     
-    class CircleClass {  
+    private static class CircleClass {  
   
-        public void main(String args[]){  
+        public static void main(){  
             Scanner scanner = new Scanner(System.in);  
             int sum = 0;  
             
@@ -89,7 +124,7 @@ public class Classes {
         }  
     } 
   
-    class MyCircle { 
+    private static class MyCircle { 
         double radius;
         String color;
     
@@ -103,9 +138,9 @@ public class Classes {
         }
     }   
     
-    class QuadrantClass {
+    private static class QuadrantClass {
 
-        public void main(String args[]) {
+        public static void main() {
             Scanner scanner = new Scanner(System.in);
 
             System.out.println("Enter x coordinate:");
@@ -119,7 +154,7 @@ public class Classes {
         }
     }
     
-    class Point {
+    private static class Point {
         int x;
         int y;
     
@@ -143,25 +178,30 @@ public class Classes {
         }
     }
     
-    class EmployeeInfo {
+    private static class EmployeeInfo {
 
-        public void main() {
-            Scanner scanner=new Scanner(System.in);
+        public static void main() {
+            
+            Scanner scanner = new Scanner(System.in);
+            
             System.out.println("Enter first name:");
             String first = scanner.nextLine();
+            
             System.out.println("Enter last name:");
             String last = scanner.nextLine();
+            
             System.out.println("Enter monthly salary:");
             double salary = scanner.nextDouble();
+            
             Employee e1 = new Employee(first,last,salary);
  
-            System.out.println("First name:"+e1.getFirst());
-            System.out.println("Last name:"+e1.getLast());
-            System.out.println("Salary:"+e1.getSalary());
+            System.out.println("First name:" + e1.getFirst());
+            System.out.println("Last name:" + e1.getLast());
+            System.out.println("Salary:" + e1.getSalary());
         }
     }
     
-    final class Employee {
+    final static class Employee {
         private String firstName;
         private String lastName;
         private double salary = 0.0;
