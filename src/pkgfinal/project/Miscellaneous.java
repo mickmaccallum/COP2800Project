@@ -44,6 +44,7 @@ public class Miscellaneous {
         return true; // Reserved for later when this uses recursion.
     }
         
+    // Finds the quadrant that a given int angle is in.
     private static int i;
     public static void quadrantOfAngle() {			
         int angle = 0;
@@ -61,6 +62,7 @@ public class Miscellaneous {
         System.out.println("Quadrant is:" + quadrant);
     }
     
+    // Iterates of array and reverses its elements.
     public static void reverseArray() {
         int arr[] = new int[10];
         Scanner scan = new Scanner(System.in);
@@ -81,6 +83,7 @@ public class Miscellaneous {
         }
     }
     
+    // Iterates over array and sums values if they are odd.
     public static void sumOfOddNumbers() {
         long max = 0;
         long sum = 0;
@@ -96,6 +99,7 @@ public class Miscellaneous {
         System.out.println("Sum of Odd no. is:" + sum);
     }
     
+    // Iterates up to a number and prints that many * per line.
     public static void triangleOfAsterisksUsingLoops() {
 	int num = 3;
 	        
@@ -105,6 +109,7 @@ public class Miscellaneous {
         }
     }
     
+    // Iterates up to a number and sums all natural numbers divisible by 3 and 5
     public static void sumOfNaturalsDivisibleByThreeAndFive() {
         int max=0;
         int sum = 0;

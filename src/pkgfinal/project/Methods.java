@@ -46,11 +46,13 @@ public class Methods {
     
     private static double number, answer;
     
+    // Finds the square root of a number
     private static void calculateSquare(double number) {
         double sqrt = Math.sqrt(number);
         System.out.println("The square root is: " + (int)sqrt);
     }
     
+    // Calls the calculateSquare() instance method.
     public static void squareRootOfNumber() {
         Methods challenge = new Methods();
         final Scanner sc = new Scanner(System.in);
@@ -60,7 +62,8 @@ public class Methods {
         
         calculateSquare(number);
     }
-        
+    
+    // Finds the area of a circle.
     private void getArea() {
         Scanner scanner = new Scanner(System.in);
         System.out.print("Enter the radius: ");
@@ -76,6 +79,7 @@ public class Methods {
         c1.getArea();
     }
     
+    // Determines if x is a multiple of y
     private static boolean multiples(int x, int y) {
         return y % x == 0;
     }
@@ -91,6 +95,7 @@ public class Methods {
         System.out.println(multiples(x, y));
     }
     
+    // Methods to convert a string to lowercase...
     private static String lowerCase(String x) {
         return x.toLowerCase();
     }
@@ -107,14 +112,17 @@ public class Methods {
         System.out.println(input);
     }
     
+    // Returns the sum of 2 ints.
     private static void Sum(int x, int y) {
         System.out.println("Sum: " + (x + y));
     }
 
+    // Returns the difference between two ints.
     private static void Difference(int x, int y) {
         System.out.println("Difference: " + (x - y));
     }
 
+    // Returns the product of two ints.
     private static int Product(int x, int y) {
         return x * y;
     }

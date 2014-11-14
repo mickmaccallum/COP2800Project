@@ -45,9 +45,12 @@ public class Loops {
         return true; // Reserved for later when this uses recursion.
     }
     
+    // Asks for five integers and sums them up.
     public static void sumOfFiveIntegers() {
         int total = 0;
-        
+
+        System.out.println("Enter 5 integers.");
+                
         Scanner scan = new Scanner(System.in);
         
         for (int i = 0; i < 5; ++i) {
@@ -57,7 +60,9 @@ public class Loops {
         System.out.println("Total is: " + total);
     }
     
+    // Asks for an int and then finds its factorial value.
     public static void factorialValue() {
+        System.out.println("Enter an integer.");
         Scanner scanner = new Scanner(System.in);
         
         int number = scanner.nextInt();
@@ -70,6 +75,7 @@ public class Loops {
         System.out.println(total);
     }    
     
+    // 2D loops print a box of number signs.
     public static void printingABoxOfNumberSigns() {
         Scanner scanner = new Scanner(System.in);
         
@@ -91,6 +97,7 @@ public class Loops {
         }
     }
     
+    // Runs a counter from ints entered by user in loops.
     public static void dynamicAdding() {
         Scanner scanner = new Scanner(System.in);
         int sum = 0;
@@ -105,6 +112,7 @@ public class Loops {
         System.out.println("The total is: " + sum);
     }
     
+    // Converts int to a String, reverses it and converts back to int.
     public static void reverseANumber() {
         Scanner scanner = new Scanner(System.in);
         int rnum = 0;

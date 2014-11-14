@@ -44,6 +44,7 @@ public class Inheritance {
         return true; // Reserved for later when this uses recursion.
     }
     
+    // Simple Counter class with a method that increments its field.
     private class Counter {  
   
 	int i = 0;  
@@ -56,6 +57,7 @@ public class Inheritance {
 	}  
     }  
   
+    // Subclass of Counter that sets initial value, increments, and prints.
     private static class CounterClass extends Counter {  
   
 	public static void main() {
@@ -104,7 +106,8 @@ public class Inheritance {
             obj.show();
         }
     }
-       
+    
+    
     private static class AreaWithInheritance {   
    
 	public static void main() {   

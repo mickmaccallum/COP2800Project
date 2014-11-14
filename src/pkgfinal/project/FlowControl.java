@@ -44,6 +44,7 @@ public class FlowControl {
         return true; // Reserved for later when this uses recursion.
     }    
     
+    // Outputs all numbers below given number that aren't divisible by 3 and 4.
     public static void noMultiplesOfThreeOrFour() {
         Scanner scanner = new Scanner(System.in);
         System.out.println("Enter a number:");
@@ -57,6 +58,7 @@ public class FlowControl {
         }
     }
     
+    // Outputs whether the given number is 24.
     public static void rightOrWrong() {
         Scanner scanner = new Scanner(System.in);
         
@@ -65,17 +67,21 @@ public class FlowControl {
         System.out.println(input == 24);
     }
     
+    // Asks for several numbers and then adds them together
     public static void luckySum() {
         Scanner scanner = new Scanner(System.in);
         int a, b, c, s;
         System.out.println("Enter 3 values:");
+        
         a = scanner.nextInt();
         b = scanner.nextInt();
         c = scanner.nextInt();
         s = findSum(a, b, c);
+        
         System.out.println("Lucky sum:" + s);
     }
     
+    // Sums given numbers that aren't equal to 13.
     private static int findSum(int a, int b, int c) {
         int total = 0;
         int[] numbers = new int[] { a, b, c };
@@ -90,6 +96,7 @@ public class FlowControl {
         return total;
     }
     
+    // Just compares numbers to determine admittance.
     public static void devryAdmissionProgram() {
         Scanner scanner = new Scanner(System.in);
         double gpa;
@@ -115,6 +122,7 @@ public class FlowControl {
         System.out.println("You were accepted");
     }
     
+    // Lets you sleep in on weekends and vacation days.
     public static void sleep() {
         Scanner scanner = new Scanner(System.in);
         

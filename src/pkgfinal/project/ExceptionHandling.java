@@ -39,6 +39,7 @@ public class ExceptionHandling {
         return true; // Reserved for later when this uses recursion.
     }   
         
+    // Tries to get an ID number and throws and exception for invalid input.
     public static void IDNumberMachine() {
         Scanner scanner = new Scanner(System.in); 
         String input;
@@ -62,9 +63,10 @@ public class ExceptionHandling {
         }
     }
     
+    // Throws an exception if number entered isn't divisible by 2 and 5.
     public static void askForACertainNumber() {
         Scanner scanner = new Scanner(System.in); 
-	System.out.println("Enter a number:"); 
+	System.out.println("Enter a number divisible by 2 and 5:"); 
 	int input = scanner.nextInt(); 
 
 	try {
@@ -79,6 +81,7 @@ public class ExceptionHandling {
     }
 }
 
+// Finds slope between two points. Throws exception on division by zero.
 class Point {
     
     private final int x;
