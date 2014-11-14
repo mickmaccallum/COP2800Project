@@ -172,5 +172,80 @@ public class Polymorphism {
         public double area(double a, double b, double c) {
             return (a * b * c) / 2.0;
         }
-    }   
+    }
+    
+    class Books {
+        public void main() {
+            Scanner scanner = new Scanner(System.in);
+
+            Book[] book = new Book[2];
+            System.out.println("Title of fiction book:");
+
+            String t = scanner.nextLine();
+            book[0] = new Fiction(t);
+
+            System.out.println("Title of non fiction book:");
+            String t1 = scanner.nextLine();
+            book[1] = new NonFiction(t1);
+ 
+            for (Book book1 : book) {
+                System.out.println(book1);
+            }
+        }
+    }
+
+    abstract class Book {
+        String title;
+        double price;
+
+        public Book(String t) {
+            title = t;
+        }
+
+        public String getTitle() {
+            return title;
+        }
+
+        public double getPrice() {
+            return price;
+        }
+
+        public abstract void setPrice(double p);
+    }
+
+    final class Fiction extends Book {
+
+        public Fiction(String t) {
+            super(t);
+            setPrice(24.99);
+        }
+
+        @Override
+        public void setPrice(double p) {
+            price = p;
+        }
+
+        @Override
+        public String toString() {
+            return "Title-" + this.title + " Cost-$" + price;
+        }
+    }
+
+    final class NonFiction extends Book {
+
+        public NonFiction(String t) {
+            super(t);
+            setPrice(37.99);
+        }
+
+        @Override
+        public void setPrice(double p) {
+            price = p;
+        }
+
+        @Override
+        public String toString() {
+            return "Title-" + this.title + " Cost-$" + price;
+        }
+    }
 }
