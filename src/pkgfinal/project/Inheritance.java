@@ -13,9 +13,9 @@ public class Inheritance {
         System.out.println("Please enter one of the following section numbers");
         
         String[] exercises = { 
-            "", "",
-            "", "",
-            ""
+            "Counter Class", "Fruits",
+            "Area With Inheritance", "Using Super",
+            "Purchased Item Section"
         };
         
         for (int iterator = 0; iterator < exercises.length; ++iterator) {

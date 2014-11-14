@@ -51,12 +51,14 @@ public class Methods {
         System.out.println("The square root is: " + (int)sqrt);
     }
     
-    public static void squareRootOfNumber() { // main
+    public static void squareRootOfNumber() {
         Methods challenge = new Methods();
         final Scanner sc = new Scanner(System.in);
+        
         System.out.print("Enter a number: ");
         number = sc.nextDouble();
-        Methods.calculateSquare(number);
+        
+        calculateSquare(number);
     }
         
     private void getArea() {

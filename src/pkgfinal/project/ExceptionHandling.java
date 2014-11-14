@@ -102,16 +102,19 @@ class SlopePoint {
 
     public static void main() {
         
-        Scanner scanner=new Scanner(System.in);
+        Scanner scanner = new Scanner(System.in);
         boolean continueLoop = true;
 
         while (continueLoop) {
             System.out.println("Enter x coordinate of current point:");
             int x1 = scanner.nextInt();
+            
             System.out.println("Enter y coordinate of current point:");
             int y1 = scanner.nextInt();
+            
             System.out.println("Enter x coordinate of target point:");
             int x2 = scanner.nextInt();
+            
             System.out.println("Enter y coordinate of target point:");    
             int y2 = scanner.nextInt();
 

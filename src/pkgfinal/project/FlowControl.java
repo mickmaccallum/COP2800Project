@@ -45,7 +45,7 @@ public class FlowControl {
     }    
     
     public static void noMultiplesOfThreeOrFour() {
-        Scanner scanner=new Scanner(System.in);
+        Scanner scanner = new Scanner(System.in);
         System.out.println("Enter a number:");
         
         int input = scanner.nextInt();
@@ -58,7 +58,7 @@ public class FlowControl {
     }
     
     public static void rightOrWrong() {
-        Scanner scanner=new Scanner(System.in);
+        Scanner scanner = new Scanner(System.in);
         
         int input = scanner.nextInt();
         
@@ -66,7 +66,7 @@ public class FlowControl {
     }
     
     public static void luckySum() {
-        Scanner scanner=new Scanner(System.in);
+        Scanner scanner = new Scanner(System.in);
         int a, b, c, s;
         System.out.println("Enter 3 values:");
         a = scanner.nextInt();
@@ -76,9 +76,9 @@ public class FlowControl {
         System.out.println("Lucky sum:" + s);
     }
     
-    private static int findSum(int a,int b,int c) {
+    private static int findSum(int a, int b, int c) {
         int total = 0;
-        int[] numbers = new int[] {a, b, c};
+        int[] numbers = new int[] { a, b, c };
         
         for (int i : numbers) {
             if (i == 13) {
@@ -94,8 +94,10 @@ public class FlowControl {
         Scanner scanner = new Scanner(System.in);
         double gpa;
         int sat_score;
+        
         System.out.println("Devry University Admission Program");
         System.out.print("Enter your GPA out of 5:");
+        
         gpa = scanner.nextDouble();
         System.out.print("Enter your SAT Score:");
         sat_score = scanner.nextInt();
@@ -115,8 +117,10 @@ public class FlowControl {
     
     public static void sleep() {
         Scanner scanner = new Scanner(System.in);
+        
         System.out.print("Is it a weekday today?(true or false):");
         boolean w = scanner.nextBoolean();
+        
         System.out.print("Are you on a vacation?(true or false):");
         boolean v = scanner.nextBoolean();
         

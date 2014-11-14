@@ -95,7 +95,9 @@ public class Strings {
     
     private static void longestWord() throws IOException {
         System.out.println("Enter a sentence:");
-        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        
+        InputStreamReader reader = new InputStreamReader(System.in);
+        BufferedReader br = new BufferedReader(reader);
 
         String s1 = br.readLine();
         String longestWord = "";
@@ -108,6 +110,7 @@ public class Strings {
             }
         }
 
-        System.out.println("The longest word in the sentence is:" + longestWord); 
+        System.out.println("The longest word in the sentence is:"
+            + longestWord); 
     }
 }

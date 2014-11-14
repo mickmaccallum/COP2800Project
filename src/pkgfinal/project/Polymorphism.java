@@ -1,3 +1,9 @@
+/*
+*   Michael MacCallum - COP 2800
+*   This file contains programs from Programmr's Polymorphism section and
+*   a program to execute them.
+*/
+
 package pkgfinal.project;
 import java.text.DecimalFormat;
 import java.util.Scanner;

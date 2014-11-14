@@ -1,7 +1,11 @@
+/*
+*   Michael MacCallum - COP 2800
+*   This file contains programs from Programmr's Collection section and
+*   a program to execute them.
+*/
 
 package pkgfinal.project;
 import java.util.*;
-
 
 public class Collections {
 
@@ -45,7 +49,7 @@ public class Collections {
         Scanner scanner = new Scanner(System.in);
         ArrayList<Integer> list = new ArrayList<>();
 
-	System.out.println("Enter the number of integers that will be inserted: ");
+	System.out.println("Enter the number of integers to be inserted: ");
 	int size = scanner.nextInt();
 	System.out.println("Enter some integers to insert to the ArrayList: ");
 		
@@ -71,7 +75,7 @@ public class Collections {
         Scanner scanner = new Scanner(System.in);
     	ArrayList<Integer> al = new ArrayList<>();
         
-        System.out.println("Enter the number of integers that will be inserted: ");
+        System.out.println("Enter the number of integers to be inserted: ");
 	int size = scanner.nextInt();
 	System.out.println("Enter some integers to insert to the ArrayList: ");
 	
@@ -91,7 +95,7 @@ public class Collections {
             }
         }
 
-        System.out.println("The largest value is " + max + "; which is in slot " + maxindex); 
+        System.out.println("Largest value is " + max + "; in slot " + maxindex); 
     }
     
     private static void lengthOfLongestStringInArrayList() {
@@ -166,6 +170,8 @@ public class Collections {
     	System.out.println("ArrayList 2:" + print(a2));
     }
     
+    // Returns the reduction of concatenated strings with spaces added.
+    // Hooray functional programming!
     private static String print(ArrayList<Integer> a) {
     	String ret = "";
 		

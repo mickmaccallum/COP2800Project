@@ -48,7 +48,7 @@ public class Miscellaneous {
     public static void quadrantOfAngle() {			
         int angle = 0;
 
-        System.out.println("Type an integer angle (in degrees) and press Enter:");
+        System.out.println("Type an integer angle (in degrees)");
         Scanner sc = new Scanner(System.in);
         angle = sc.nextInt();
 
@@ -64,6 +64,7 @@ public class Miscellaneous {
     public static void reverseArray() {
         int arr[] = new int[10];
         Scanner scan = new Scanner(System.in);
+        
         for (int iterator = 0; iterator < 10; iterator++) {
             System.out.println("Enter the array elements[" + iterator + "]:");
             arr[iterator] = scan.nextInt();

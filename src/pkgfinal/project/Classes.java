@@ -57,13 +57,12 @@ public class Classes {
             Scanner scanner = new Scanner(System.in);  
   
             System.out.print("Enter the name:");  
-            String nameString = scanner.next();  
+            String nameStr = scanner.next();  
             System.out.print("Enter the age:");  
-            String ageString = scanner.next();  
+            String ageStr = scanner.next();  
               
-            PrintWithToString test = new PrintWithToString(nameString, ageString);  
+            PrintWithToString test = new PrintWithToString(nameStr, ageStr);  
             System.out.println(test);  
-                 
 	}  
   
         @Override
@@ -107,7 +106,7 @@ public class Classes {
     
     private static class CircleClass {  
   
-        public static void main(){  
+        public static void main() {  
             Scanner scanner = new Scanner(System.in);  
             int sum = 0;  
             

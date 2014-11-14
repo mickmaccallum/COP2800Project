@@ -49,9 +49,12 @@ public class Operators {
         int a, b;
         int resulta, results, resultm;
         float resultd;
+        
         Scanner sc = new Scanner(System.in);
+        
         System.out.print("Enter a:");
         a = sc.nextInt();
+        
         System.out.print("Enter b:");
         b = sc.nextInt();
         
@@ -77,7 +80,7 @@ public class Operators {
     }
     
     public static void largestOfThreeNumbers() {
-        Scanner scanner=new Scanner(System.in);
+        Scanner scanner = new Scanner(System.in);
         int x, y, z;
         
         System.out.println("Enter three integers:");
@@ -88,11 +91,11 @@ public class Operators {
         
         if (x > y && x > z) {
             System.out.println("First number is largest.");
-            } else if (y > x && y > z) {
+        } else if (y > x && y > z) {
             System.out.println("Second number is largest.");
-            } else if (z > x && z > y) {
+        } else if (z > x && z > y) {
             System.out.println("Third number is largest.");
-            } else {
+        } else {
             System.out.println("Entered numbers are not distinct.");
         }
     }
@@ -102,6 +105,7 @@ public class Operators {
         double principal;  // the value of the investment
         double rate;       // the annual interest rate
         double interest;   // the interest earned during the year
+        
         Scanner scanner = new Scanner(System.in);
         System.out.println("Enter the initial investment: ");
         principal = scanner.nextDouble();
@@ -119,6 +123,7 @@ public class Operators {
     public static void leapYear() {
         Scanner scanner = new Scanner(System.in);
         System.out.println("Enter the year to be checked: ");
+        
         int year = scanner.nextInt();
         boolean isLeapYear = (year % 4 == 0 && year % 100 != 0)
             || (year % 400 == 0);
