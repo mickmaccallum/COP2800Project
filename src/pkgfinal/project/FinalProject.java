@@ -95,6 +95,8 @@ public class FinalProject {
                 System.out.println("Please enter a section number.");
                 startProjectCycle();
                 break;
-        }        
+        }
+        
+        System.out.println("Thank you for playing!");
     }
 }

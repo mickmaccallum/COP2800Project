@@ -92,10 +92,10 @@ class Point {
         y = num2;
     }
             
-    public int slope(int num3, int num4) throws ArithmeticException {
-        int numerator = num4 - y;
-        int denominator = num3 - x;
-        int slope = (numerator) / (denominator);
+    public double slope(double num3, double num4) throws ArithmeticException {
+        double numerator = num4 - y;
+        double denominator = num3 - x;
+        double slope = (numerator) / (denominator);
             
         return Math.abs(slope);
     }
@@ -125,6 +125,7 @@ class SlopePoint {
     
             try {
                 System.out.println(p.slope(x2, y2));
+                continueLoop = false;
             } catch (ArithmeticException e) {
                 System.out.println("Zero is an invalid denominator. Please try again.");
             }

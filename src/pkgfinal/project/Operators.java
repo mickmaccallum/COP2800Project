@@ -70,6 +70,7 @@ public class Operators {
         
     }
     
+    // Applys math to convert degrees to fahrenheit from celsius.
     public static void degreeToFahrenheitConverter() {
         
         System.out.println("Enter a temperature in Celsius: ");
@@ -79,6 +80,7 @@ public class Operators {
         System.out.println("The temperature in Fahrenheit is: " + fahrenheit);
     }
     
+    // Checks which of 3 numbers is the largest.
     public static void largestOfThreeNumbers() {
         Scanner scanner = new Scanner(System.in);
         int x, y, z;
