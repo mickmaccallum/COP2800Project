@@ -8,7 +8,8 @@ package pkgfinal.project;
 import java.util.Scanner;
 
 public class Classes {
-    
+
+//  Iterates over array of exercise names and selects method to run. 
     public static boolean startSection() {
         System.out.println("Please enter one of the following section numbers");
         
@@ -43,7 +44,8 @@ public class Classes {
         
         return true; // Reserved for later when this uses recursion.
     }
-        
+    
+    // Class to demonstrate overridding the toString() method.
     private static class PrintWithToString { 
         String name;
         String age;
@@ -71,6 +73,7 @@ public class Classes {
 	}  
     } 
     
+    // Classes to demonstrate methods and fields;
     private static class AuthorClass {     
       
         public static void main() {     
@@ -104,6 +107,7 @@ public class Classes {
         }
     }
     
+    // Classes to give more examples of instance methods and fields.
     private static class CircleClass {  
   
         public static void main() {  
@@ -123,6 +127,7 @@ public class Classes {
         }  
     } 
   
+    // Circle class with radius and color. Can output area.
     private static class MyCircle { 
         double radius;
         String color;
@@ -137,6 +142,7 @@ public class Classes {
         }
     }   
     
+    // Class utilizing Point class to determine the quadrant of a given point.
     private static class QuadrantClass {
 
         public static void main() {
@@ -153,6 +159,7 @@ public class Classes {
         }
     }
     
+    // Point has fields for x/y, constructor with x/y. Can output its quadrant.
     private static class Point {
         int x;
         int y;
@@ -177,6 +184,7 @@ public class Classes {
         }
     }
     
+    // Class to utilize Employee class to get/set employee information.
     private static class EmployeeInfo {
 
         public static void main() {
@@ -200,6 +208,7 @@ public class Classes {
         }
     }
     
+    // Employee class with getters/setters for first/last name and salary.
     final static class Employee {
         private String firstName;
         private String lastName;

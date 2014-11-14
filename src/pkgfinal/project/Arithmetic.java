@@ -12,6 +12,7 @@ import java.io.InputStreamReader;
 
 public class Arithmetic {
     
+//  Iterates over array of exercise names and selects method to run.
     public static boolean startSection() throws IOException {
         System.out.println("Please enter one of the following section numbers");
         
@@ -47,6 +48,7 @@ public class Arithmetic {
         return true; // Reserved for later when this uses recursion.
     }    
     
+    // Asks for two numbers and compares their absolute values
     public static void absoluteEquals() {
         Scanner scanner = new Scanner(System.in);
         boolean equal = false;
@@ -59,9 +61,10 @@ public class Arithmetic {
         
         equal = Math.abs(num1) == Math.abs(num2);
         
-        System.out.println("Result is:"+equal);
+        System.out.println("Result is:" + equal);
     }
     
+    // Outputs a given number both rounded up and down.
     public static void floorAndCeilingOfNumber() {
         Scanner scanner = new Scanner(System.in);
         
@@ -72,23 +75,27 @@ public class Arithmetic {
         System.out.println((int)Math.floor(dob));
     }
     
+    // Outputs the square and quadratic roots of a given number.
     public static void squareAndQuadraticRoots() {
         Scanner scan = new Scanner(System.in);
         System.out.println("Enter a number:");
         
         double x = scan.nextDouble();
         double sqrt = Math.sqrt(x);
-        double cbrt = Math.sqrt(sqrt);
+        double qdrt = Math.sqrt(sqrt);
         
         System.out.println(String.format("%.5f",sqrt));
-        System.out.println(String.format("%.5f",cbrt));
+        System.out.println(String.format("%.5f",qdrt));
     }
     
+    // Iterates up to a given number and sums up multiples of 3 and 5.
     public static void multiplesOfThreeOrFiveBelowN() throws IOException {
         int sum = 0, num = 0;
-        System.out.println("Enter a number below which sum must be calculated:");
+        System.out.println("Enter a number");
         
-        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        InputStreamReader reader = new InputStreamReader(System.in);
+        BufferedReader br = new BufferedReader(reader);
+        
         String s1 = br.readLine();
         num = Integer.parseInt(s1);
         
@@ -103,6 +110,7 @@ public class Arithmetic {
         System.out.println(sum);
     }
     
+    // Outputs the sum or first number if the digits add up to the same value.
     public static void sumLimit() {
         Scanner scanner = new Scanner(System.in);
         int sum = 0;

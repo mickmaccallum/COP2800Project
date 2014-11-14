@@ -8,7 +8,7 @@ package pkgfinal.project;
 import java.util.*;
 
 public class Collections {
-
+//  Iterates over array of exercise names and selects method to run.
     public static boolean startSection() {
         System.out.println("Please enter one of the following section numbers");
         
@@ -44,6 +44,7 @@ public class Collections {
         return true; // Reserved for later when this uses recursion.
     }    
     
+    // Iterates over array list and finds its largest element.
     private static void largestValueInArrayList() {
         
         Scanner scanner = new Scanner(System.in);
@@ -70,6 +71,7 @@ public class Collections {
         System.out.println("The largest value: " + max);
     }
     
+    // Iterates over array list and finds the index of the largest element.
     private static void largestValueAndIndexInArrayList() {
         
         Scanner scanner = new Scanner(System.in);
@@ -98,6 +100,7 @@ public class Collections {
         System.out.println("Largest value is " + max + "; in slot " + maxindex); 
     }
     
+    // Iterates over array list to finds the longest string in the array list.
     private static void lengthOfLongestStringInArrayList() {
         Scanner scanner = new Scanner(System.in);
     	ArrayList<String> al = new ArrayList<>();
@@ -122,6 +125,7 @@ public class Collections {
         System.out.println("TheLength of longest string in arraylist:" + max);
     }
     
+    // Simply pushes items to a stack and then pops one off.
     private static void stack() {
         Scanner scanner = new Scanner(System.in);
         int sum = 0;
@@ -152,6 +156,7 @@ public class Collections {
         System.out.println(st);
     }
     
+    // Makes a copy of an array list and then modifies the original.
     private static void CopyArrayList() {
     	Scanner scanner = new Scanner(System.in);
         System.out.print("Enter ten elements: ");

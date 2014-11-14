@@ -9,6 +9,7 @@ import java.util.Scanner;
 
 public class Arrays {
 
+//  Iterates over array of exercise names and selects method to run.
     public static boolean startSection() {
         System.out.println("Please enter one of the following section numbers");
         
@@ -44,6 +45,7 @@ public class Arrays {
         return true; // Reserved for later when this uses recursion.
     }    
     
+    // Iterates over an int array and sums up the value of the elements.
     public static void addElementsOfAnArray() {
         Scanner scanner = new Scanner(System.in);
         int sum = 0;
@@ -63,6 +65,7 @@ public class Arrays {
         System.out.println("The sum of the elements in the array is: " + sum);
     }
     
+    // Outputs only the even numbers in a given int array.
     public static void evenNumbersOnly() {
         Scanner scanner = new Scanner(System.in);
         int [] arr = new int[5];
@@ -84,6 +87,7 @@ public class Arrays {
         }
     }
     
+    // Outputs the product of highest and lowest numerical values in the array.
     public static void productOfGreatestAndSmallest() {
         Scanner scanner = new Scanner(System.in);
         int sum = 0;
@@ -110,6 +114,7 @@ public class Arrays {
         System.out.println("Result is: " + (max * min));
     }
     
+    // Gets the first/last items in an array and reverses them.
     public static void swapEnds() {
         Scanner scanner = new Scanner(System.in);
         int size = 0;
@@ -134,6 +139,7 @@ public class Arrays {
         }
     }
     
+    // Iterates over and array to find the index of the highest value.
     public static void locateTheLargestNumberInTheArray() {
         int[] a = new int[10];
         int maxPos = 0;

@@ -37,7 +37,7 @@ public class FinalProject {
             System.out.println(iterator + ". " + menuItems[iterator]);
         }
     }
-
+//  Iterates over array of exercise names and selects method to run.
     private static void startProjectCycle() throws IOException {
         
         printSections();

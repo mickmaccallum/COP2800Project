@@ -10,7 +10,7 @@ import java.util.Scanner;
 import java.io.*;   
 
 public class Strings {
-    
+//  Iterates over array of exercise names and selects method to run.    
     public static boolean startSection() throws IOException {
         System.out.println("Please enter one of the following section numbers");
         

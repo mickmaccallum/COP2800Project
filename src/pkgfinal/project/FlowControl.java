@@ -8,8 +8,8 @@ package pkgfinal.project;
 import java.util.Scanner;
 
 public class FlowControl {
-    
-        public static boolean startSection() {
+//  Iterates over array of exercise names and selects method to run.    
+    public static boolean startSection() {
         System.out.println("Please enter one of the following section numbers");
         
         String[] exercises = { 
