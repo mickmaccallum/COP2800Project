@@ -122,7 +122,7 @@ public class Collections {
             }
         }
     
-        System.out.println("TheLength of longest string in arraylist:" + max);
+        System.out.println("The Length of longest string in array list is: " + max);
     }
     
     // Simply pushes items to a stack and then pops one off.
